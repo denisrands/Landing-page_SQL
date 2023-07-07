@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rands Accounting Firm</title> 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0a8df8;
+    }
+
+    /* Tabs Styles */
+    .tab {
+      background-color: inherit;
+      display: inline-block;
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #ee1515;
+      cursor: pointer;
+    }
+
+    .active {
+      background-color: #e60f0f;
+    }
+
+    /* Content Styles */
+    .content {
+      margin: 20px;
+    }
+
+    /* Form Styles */
+    .form-popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    .form-container {
+      background-color: #fff;
+      max-width: 300px;
+      margin: 100px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0 10px 0;
+      border: 1px solid #ccc;
+    }
+
+    .form-container button {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Media Queries */
+    @media (max-width: 600px) {
+      .form-container {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="tab" onclick="openTab(event, 'home')">Home</div>
+  <div class="tab" onclick="openTab(event, 'about')">About Us</div>
+  <div class="tab" onclick="openTab(event, 'services')">Services Offered</div>
+  <div class="tab" onclick="openTab(event, 'contact')">Contact Us</div>
+
+  <div id="home" class="content">
+    <h1>Welcome to Rands Accounting Firm</h1>
+    <p>We are a professional accounting firm that specializes in providing accounting solutions to businesses of all sizes. Our team of experienced accountants is dedicated to providing our clients with the highest quality service.</p></p>
+    <p>Where all your Accounting problems are solved. Honesty and Time Management are our mottos.</p>
+    <p>The objective is to solve all your Accounting problems and give your Company the best Accounting solutions ever.</p>
+  </div>
+
+  <div id="about" class="content">
+    <h1>About Us</h1>
+    <p>Rands Accounting Firm was founded in 2010 by Denis Rands. Denis is a certified public accountant with over 7 years of experience in the accounting industry. He is committed to providing his clients with the highest quality service.</p>
+    <p>Rands Accounting Firm is headquartered in Nairobi, Kenya. The firm has a team of experienced accountants who are dedicated to providing their clients with the best possible service.</p>
+    <p>Rands Accounting Firm is a member of the Institute of Certified Public Accountants of Kenya. The firm is committed to upholding the highest ethical standards in the accounting industry.</p>
+    <p>We are the best Accounting Firm in Africa. Test us and see the good results for your company.</p>
+  </div>
+
+  <div id="services" class="content">
+    <h1>Services Offered</h1>
+    <ul>
+      <li>Bookkeeping</li>
+      <li>Financial Statement Analysis</li>
+      <li>Auditing</li>
+      <li>QuickBooks Installation Training</li>
+      <li>General Accounting Solutions</li>
+    </ul>
+  </div>
+
+  <div id="contact" class="content">
+    <h1>Contact Us</h1>
+    <p>Phone number: +254736282138</p>
+    <p>Email: randsaccountingfirm@gmail.com</p>
+  </div>
+
+  <div class="form-popup" id="signupForm">
+    <div class="form-container">
+      <h2>Sign Up</h2>
+      <input type="text" placeholder="Username">
+      <input type="password" placeholder="Password">
+      <button type="button">Sign Up</button>
+    </div>
+  </div>
+  <div class="signup">
+      <input type="text" placeholder="Username"> <br><br>
+      <input type="password" placeholder="Password"> <br><br>
+      <input type="confirm password" placeholder="confirm Password"><br><br>
+      <button class="signup-btn">Sign Up</button>
+</div>
+
+  <div class="form-container" id="loginForm">
+    <h2>Login</h2>
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button type="button">Login</button>
+  </div>
+
+  <script>
+    function openTab(evt, tabName) {
+      // Hide all content elements
+      var contents = document.getElementsByClassName("content");
+      for (var i = 0; i < contents.length; i++) {
+        contents[i].style.display = "none";
+      }
+
+      // Remove "active" class from all tab elements
+      var tabs = document.getElementsByClassName("tab");
+      for (var i = 0; i < tabs.length; i++) {
+        tabs[i].className = tabs[i].className.replace(" active", "");
+      }
+
+      // Show the selected content and mark the tab as active
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    function openSignupForm() {
+      document.getElementById("signupForm").style.display = "block";
+    }
+
+    function closeForm() {
+      document.getElementById("signupForm").style.display = "none";
+    }
+  </script>
+</body>
+</html>
+
+
